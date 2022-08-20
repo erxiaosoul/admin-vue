@@ -1,10 +1,10 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-04 20:45:43
- * @LastEditTime: 2022-08-20 11:28:58
+ * @LastEditTime: 2022-08-20 21:46:52
  * @LastEditors: 贾二小
  * @Description: 
- * @FilePath: /EXUI/src/layouts/components/tabBar.vue
+ * @FilePath: /admin-vue/src/layouts/components/tabBar.vue
 -->
 <script setup lang="ts">
 import menuStore from '@/store/menuStore'
@@ -23,10 +23,7 @@ const removeMenu = (menu: RouteLocationNormalized) => {
 </script>
 <template>
   <ul>
-    <li
-      v-for="item in menus"
-      :class="{ 'is-active': $route.name == item.name }"
-      class="animate__animated animate__fadeInRights">
+    <li v-for="item in menus" :class="{ 'is-active': $route.name == item.name }">
       <router-link :to="{ name: item.name as string }">
         {{ item.meta.title }}
       </router-link>
@@ -38,12 +35,11 @@ const removeMenu = (menu: RouteLocationNormalized) => {
 ul {
   @apply flex items-center space-x-2 overflow-x-auto;
   .is-active {
-    color: var(--active-color);
+    color: var(--el-menu-active-color);
   }
   li {
     transition-duration: var(--el-transition-duration);
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: var(--el-bg-color);
     &:hover {
       background-color: var(--el-menu-hover-bg-color);
     }
