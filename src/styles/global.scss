@@ -1,0 +1,16 @@
+body {
+  @apply overflow-hidden;
+}
+
+.el-dialog__body,
+.el-card__body {
+  padding-top: 10px !important;
+}
+
+.el-dialog__header {
+  .el-dialog__title {
+    font-size: 1rem;
+    font-weight: bold;
+    @apply text-gray-600;
+  }
+}
