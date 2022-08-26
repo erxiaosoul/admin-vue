@@ -1,29 +1,14 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-30 15:39:07
- * @LastEditTime: 2022-08-19 18:52:41
+ * @LastEditTime: 2022-08-24 22:21:25
  * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/views/config/index.vue
+ * @FilePath: /admin-vue/src/views/config/index.vue
 -->
 <script setup lang="ts">
 const { load, configs } = useConfig()
 
-const params = {
-  page: 1,
-  per_page: 5,
-}
-await load(params)
-
-const currentChange = async (num: number) => {
-  params.page = num
-  await load(params)
-}
-const sizeChange = async (num: number) => {
-  params.per_page = num
-  await load(params)
-}
-
-const userTableColumns = [
+const configTableColumns = [
   { prop: 'id', label: 'ID', align: 'center', width: 80 },
   { prop: 'category', label: '分类', width: 300, search: true },
   { prop: 'title', label: '标题', width: 300, search: true },
@@ -36,12 +21,12 @@ const userTableColumns = [
 
 <template>
   <el-card shadow="hover">
-    <ExTable :data="configs?.data" :columns="userTableColumns" :button-width="100" />
-    <ExPagination
+    <ExTable
+      :columns="configTableColumns"
+      :data="configs?.data"
       :total="configs?.meta.total"
       :size="configs?.meta.per_page"
-      @change="currentChange"
-      @sizeChange="sizeChange" />
+      @load="load" />
   </el-card>
 </template>
 

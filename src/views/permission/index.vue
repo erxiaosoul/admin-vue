@@ -1,29 +1,14 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-08-17 17:32:23
- * @LastEditTime: 2022-08-18 14:55:06
+ * @LastEditTime: 2022-08-24 22:21:47
  * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/views/permission/index.vue
+ * @FilePath: /admin-vue/src/views/permission/index.vue
 -->
 <script setup lang="ts">
 const { load, permissions } = usePermission()
 
-const params = {
-  page: 1,
-  per_page: 5,
-}
-await load(params)
-
-const currentChange = async (num: number) => {
-  params.page = num
-  await load(params)
-}
-const sizeChange = async (num: number) => {
-  params.per_page = num
-  await load(params)
-}
-
-const userTableColumns = [
+const permissionTableColumns = [
   { prop: 'id', label: 'ID', align: 'center', width: 80 },
   { prop: 'category', label: '分类', width: 300, search: true },
   { prop: 'title', label: '标题', width: 300, search: true },
@@ -36,12 +21,12 @@ const userTableColumns = [
 
 <template>
   <el-card shadow="hover">
-    <ExTable :data="permissions?.data" :columns="userTableColumns" :button-width="100" />
-    <ExPagination
+    <ExTable
+      :columns="permissionTableColumns"
+      :data="permissions?.data"
       :total="permissions?.meta.total"
       :size="permissions?.meta.per_page"
-      @change="currentChange"
-      @sizeChange="sizeChange" />
+      @load="load" />
   </el-card>
 </template>
 

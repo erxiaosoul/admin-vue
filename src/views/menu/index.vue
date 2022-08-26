@@ -1,29 +1,14 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-08-17 13:37:29
- * @LastEditTime: 2022-08-18 14:54:53
+ * @LastEditTime: 2022-08-24 22:21:00
  * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/views/menu/index.vue
+ * @FilePath: /admin-vue/src/views/menu/index.vue
 -->
 <script setup lang="ts">
 const { load, menus } = useMenu()
 
-const params = {
-  page: 1,
-  per_page: 5,
-}
-await load(params)
-
-const currentChange = async (num: number) => {
-  params.page = num
-  await load(params)
-}
-const sizeChange = async (num: number) => {
-  params.per_page = num
-  await load(params)
-}
-
-const userTableColumns = [
+const menuTableColumns = [
   { prop: 'id', label: 'ID', align: 'center', width: 80 },
   { prop: 'pid', label: 'PID', align: 'center', width: 80 },
   { prop: 'name', label: '名称', search: true },
@@ -37,12 +22,12 @@ const userTableColumns = [
 
 <template>
   <el-card shadow="hover">
-    <ExTable :data="menus?.data" :columns="userTableColumns" :button-width="100" />
-    <ExPagination
+    <ExTable
+      :columns="menuTableColumns"
+      :data="menus?.data"
       :total="menus?.meta.total"
       :size="menus?.meta.per_page"
-      @change="currentChange"
-      @sizeChange="sizeChange" />
+      @load="load" />
   </el-card>
 </template>
 

@@ -1,7 +1,7 @@
 /*
  * @Author: 贾二小
  * @Date: 2022-08-15 14:48:47
- * @LastEditTime: 2022-08-21 00:48:54
+ * @LastEditTime: 2022-08-23 17:39:14
  * @LastEditors: 贾二小
  * @FilePath: /admin-vue/vite.config.ts
  */
@@ -18,7 +18,7 @@ export default defineConfig(({ command, mode }) => {
   return {
     plugins: [...setupPlugins(isBuild, env), vueJsx({})],
     //静态文件 url 前缀
-    base: isBuild ? '/core/' : '/',
+    // base: isBuild ? '/core/' : '/',
     resolve: {
       alias,
     },
