@@ -1,19 +1,9 @@
-<!--
- * @Author: 贾二小
- * @Date: 2022-07-04 20:25:15
- * @LastEditTime: 2022-08-16 15:45:44
- * @LastEditors: 贾二小
- * @Description: 
- * @FilePath: /EXUI/src/layouts/components/menu.vue
--->
 <script setup lang="ts">
 import menuStore from '@/store/menuStore'
 import NavMenu from './navMenu.vue'
 const route = useRoute()
 const menuService = menuStore()
 // watch(route, () => menuService.setCurrentMenu(route), { immediate: true })
-//
-
 const isCollapse = ref(false)
 </script>
 

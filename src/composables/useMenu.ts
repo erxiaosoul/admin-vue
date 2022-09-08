@@ -1,10 +1,4 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-08-17 16:45:55
- * @LastEditTime: 2022-08-17 17:28:32
- * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/composables/useMenu.ts
- */
+import { ElMessageBox } from 'element-plus'
 import * as api from '@/apis/menu'
 import router from '@/router/register'
 

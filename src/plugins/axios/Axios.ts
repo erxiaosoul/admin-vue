@@ -1,12 +1,3 @@
-import { isLogin } from '@/utils/helper'
-/*
- * @Author: 贾二小
- * @Date: 2022-04-21 21:39:09
- * @LastEditTime: 2022-08-20 13:42:08
- * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/plugins/axios/Axios.ts
- */
-import { RouteEnum } from '@/enum/routeEnum'
 import { CacheEnum } from '@/enum/cacheEnum'
 import store from '@/utils/store'
 import router from '@/router/register'

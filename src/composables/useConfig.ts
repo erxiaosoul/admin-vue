@@ -1,12 +1,6 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-08-17 16:46:08
- * @LastEditTime: 2022-08-17 17:14:05
- * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/composables/useConfig.ts
- */
 import * as api from '@/apis/config'
 import router from '@/router/register'
+import { ElMessageBox } from 'element-plus'
 
 export default () => {
   const configs = ref<ResponsePageResult<ConfigModel>>()

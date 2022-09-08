@@ -1,10 +1,3 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-08-15 14:48:47
- * @LastEditTime: 2022-08-15 23:20:23
- * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/router/register/index.ts
- */
 import { App } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import register from './register'

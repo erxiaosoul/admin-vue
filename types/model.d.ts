@@ -1,11 +1,3 @@
-/*
- * @Author: 贾二小 jiaerxiao@outlook.com
- * @Date: 2022-07-01 22:26:59
- * @LastEditors: 贾二小
- * @LastEditTime: 2022-08-17 17:30:24
- * @FilePath: /EXUI/types/model.d.ts
- */
-
 interface MenuModel {
   id?: number
   pid?: number

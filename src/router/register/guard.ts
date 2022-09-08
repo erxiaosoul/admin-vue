@@ -1,10 +1,3 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-08-09 00:48:04
- * @LastEditTime: 2022-08-16 23:49:06
- * @LastEditors: 贾二小
- * @FilePath: /exui/src/router/register/guard.ts
- */
 import { RouteLocationNormalized, Router, RouteRecordRaw } from 'vue-router'
 import errorStore from '@/store/errorStore'
 import { isLogin } from '@/utils/helper'
@@ -18,8 +11,6 @@ class Guard {
    * 是否加载动态路由
    */
   private isLoadRoute = true
-
-  // private views = import.meta.globEager('../../views/**/*.vue')
 
   public async run() {
     this.router.beforeEach(this.beforeEach.bind(this))
@@ -40,32 +31,31 @@ class Guard {
     if (this.isLoadRoute && isLogin()) {
       this.isLoadRoute = false
       //加载用户信息和菜单
-      await Promise.all([userStore().getUserInfo(), menuStore().getMenus()])
-      //注册路由
-      const adminRoute: RouteRecordRaw = {
-        path: '/',
-        name: 'layout',
-        redirect: '/home',
-        component: () => import('@/layouts/index.vue'),
-        children: [],
-      }
-      let routes = this.getRoutes()
-      menuStore().menus.forEach((m) => {
-        //是否找到对应的路由
-        routes
-          .filter((r) => r.name == m.name)
-          .map((item) => {
-            adminRoute.children.push({
-              name: m.name,
-              path: m.path,
-              redirect: m.redirect,
-              component: item.component,
-              meta: m.meta,
-            } as RouteRecordRaw)
-          })
-      })
-      this.router.addRoute(adminRoute)
-      return { path: to.path }
+      // await Promise.all([userStore().getUserInfo(), menuStore().getMenus()])
+      // //注册路由
+      // const adminRoute: RouteRecordRaw = {
+      //   path: '/',
+      //   name: 'layout',
+      //   redirect: '/home',
+      //   component: () => import('@/layouts/index.vue'),
+      //   children: [],
+      // }
+      // let routes = this.getRoutes()
+      // menuStore().menus.forEach((m) => {
+      //   routes
+      //     .filter((r) => r.name == m.name)
+      //     .map((item) => {
+      //       adminRoute.children.push({
+      //         name: m.name,
+      //         path: m.path,
+      //         redirect: m.redirect,
+      //         component: item.component,
+      //         meta: m.meta,
+      //       } as RouteRecordRaw)
+      //     })
+      // })
+      // this.router.addRoute(adminRoute)
+      // return { path: to.path }
     }
   }
 
@@ -94,7 +84,6 @@ class Guard {
       name: name.replace('/', '.'),
       path: `/${name}`,
       component: module,
-      meta: {},
     } as RouteRecordRaw
   }
 }

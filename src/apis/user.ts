@@ -1,10 +1,3 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-04-21 21:37:13
- * @LastEditTime: 2022-08-17 17:44:57
- * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/apis/user.ts
- */
 import { http } from '@/plugins/axios'
 
 export function get(params: Record<any, any> = {}) {

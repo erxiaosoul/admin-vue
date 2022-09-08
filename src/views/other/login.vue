@@ -1,10 +1,4 @@
-<!--
- * @Author: 贾二小
- * @Date: 2022-07-02 00:06:51
- * @LastEditTime: 2022-08-16 23:51:13
- * @LastEditors: 贾二小
- * @FilePath: /exui/src/views/other/login.vue
--->
+
 <script setup lang="ts">
 import { login } from '@/apis/auth'
 import { CacheEnum } from '@/enum/cacheEnum'

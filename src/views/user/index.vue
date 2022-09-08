@@ -1,18 +1,12 @@
-<!--
- * @Author: 贾二小
- * @Date: 2022-07-30 15:39:07
- * @LastEditTime: 2022-08-26 18:22:42
- * @LastEditors: 贾二小
- * @FilePath: /admin-vue/src/views/user/index.vue
--->
 <script setup lang="ts">
 import { AddOne, Audit, Delete, Search, Filter } from '@icon-park/vue-next'
 const { load, users } = useUser()
 
 const userTableColumns = [
   { prop: 'id', label: 'ID', align: 'center', width: 80 },
-  { prop: 'name', label: '昵称' },
-  { prop: 'email', label: '邮箱', width: 300, search: true },
+  { prop: 'name', label: '姓名', width: 200 },
+  { prop: 'email', label: '邮箱', width: 220 },
+  { prop: 'mobile', label: '电话', width: 150 },
   {
     prop: 'sex',
     label: '性别',
@@ -37,18 +31,36 @@ const userTableColumns = [
   { prop: 'created_at', label: '注册时间', type: 'date', width: 120 },
   { prop: 'updated_at', label: '更新时间', type: 'date', width: 120 },
 ] as TableColumnsType[]
+
+const dialogFormVisible = ref(false)
+
+const form = reactive({
+  name: '',
+  region: '',
+  date1: '',
+  date2: '',
+  delivery: false,
+  type: [],
+  resource: '',
+  desc: '',
+})
+const labelWidth = ref('140px')
+
+const key = ref('')
 </script>
 
 <template>
   <el-card shadow="hover">
     <div class="flex items-center h-10 mb-1">
       <div class="flex-grow w-[70%] space-x-1">
-        <el-button type="primary" :icon="AddOne" @click="add">添加</el-button>
-        <el-button type="primary" :icon="Audit">审核</el-button>
-        <el-button type="danger" :icon="Delete">删除</el-button>
+        <el-button type="primary" :icon="AddOne" @click="dialogFormVisible = true" />
+        <el-button type="primary" :icon="Audit" />
+        <el-button type="danger" :icon="Delete" />
       </div>
-      <div class="flex-none w-72">
-        <div class="flex items-center"></div>
+      <div class="flex-none w-48">
+        <div class="flex items-center">
+          <el-input v-model="key" placeholder="Please Input" :suffix-icon="Search" />
+        </div>
       </div>
     </div>
 
@@ -69,6 +81,27 @@ const userTableColumns = [
       </el-table-column>
     </ExTable>
   </el-card>
+
+  <el-dialog v-model="dialogFormVisible" title="新增用户">
+    <el-form :model="form">
+      <el-form-item label="姓名" :label-width="labelWidth">
+        <el-input v-model="form.name" autocomplete="off" />
+      </el-form-item>
+
+      <el-form-item label="性别" :label-width="labelWidth">
+        <el-select v-model="form.region" placeholder="请选择性别">
+          <el-option label="男" value="1" />
+          <el-option label="女" value="0" />
+        </el-select>
+      </el-form-item>
+    </el-form>
+    <!-- <template #footer>
+      <span class="dialog-footer">
+        <el-button @click="dialogFormVisible = false">Cancel</el-button>
+        <el-button type="primary" @click="dialogFormVisible = false">Confirm</el-button>
+      </span>
+    </template> -->
+  </el-dialog>
 </template>
 
 <style lang="scss"></style>

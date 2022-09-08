@@ -1,11 +1,3 @@
-import { useRouter } from 'vue-router'
-/*
- * @Author: 贾二小
- * @Date: 2022-07-09 11:06:42
- * @LastEditTime: 2022-08-15 23:11:11
- * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/store/menuStore.ts
- */
 import { defineStore } from 'pinia'
 import { RouteLocationNormalized } from 'vue-router'
 import _ from 'lodash'

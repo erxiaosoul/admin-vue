@@ -1,10 +1,3 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-07-01 22:31:11
- * @LastEditTime: 2022-08-09 00:48:52
- * @LastEditors: 贾二小
- * @FilePath: /exui/src/store/errorStore.ts
- */
 import { defineStore } from 'pinia'
 
 export default defineStore('errorStore', {

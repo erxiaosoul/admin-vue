@@ -1,11 +1,5 @@
-<!--
- * @Author: 贾二小
- * @Date: 2022-07-30 15:39:07
- * @LastEditTime: 2022-08-24 22:21:25
- * @LastEditors: 贾二小
- * @FilePath: /admin-vue/src/views/config/index.vue
--->
 <script setup lang="ts">
+import { AddOne, Delete, Search } from '@icon-park/vue-next'
 const { load, configs } = useConfig()
 
 const configTableColumns = [
@@ -17,10 +11,23 @@ const configTableColumns = [
   { prop: 'created_at', label: '创建时间', type: 'date', width: 120 },
   { prop: 'updated_at', label: '更新时间', type: 'date', width: 120 },
 ] as TableColumnsType[]
+
+const key = ref('')
 </script>
 
 <template>
   <el-card shadow="hover">
+    <div class="flex items-center h-10 mb-1">
+      <div class="flex-grow w-[70%] space-x-1">
+        <el-button type="primary" :icon="AddOne" />
+        <el-button type="danger" :icon="Delete" />
+      </div>
+      <div class="flex-none w-48">
+        <div class="flex items-center">
+          <el-input v-model="key" placeholder="Please Input" :suffix-icon="Search" />
+        </div>
+      </div>
+    </div>
     <ExTable
       :columns="configTableColumns"
       :data="configs?.data"

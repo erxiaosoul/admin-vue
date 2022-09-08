@@ -1,11 +1,3 @@
-<!--
- * @Author: 贾二小
- * @Date: 2022-05-04 14:41:44
- * @LastEditTime: 2022-08-16 20:15:13
- * @LastEditors: 贾二小
- * @Description: 
- * @FilePath: /exui/src/layouts/index.vue
--->
 <script setup lang="ts">
 import Menu from './components/menu.vue'
 import Footer from './components/footer.vue'
@@ -22,7 +14,9 @@ watch(
   },
   { immediate: true },
 )
-// await Promise.all([userStore().getUserInfo(), menuStore().getMenus()])
+
+//加载用户信息和菜单
+await Promise.all([userStore().getUserInfo(), menuStore().getMenus()])
 </script>
 
 <template>

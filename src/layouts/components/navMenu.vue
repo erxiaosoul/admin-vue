@@ -1,11 +1,3 @@
-<!--
- * @Author: 贾二小
- * @Date: 2022-07-07 20:21:46
- * @LastEditTime: 2022-08-20 11:37:23
- * @LastEditors: 贾二小
- * @Description: 
- * @FilePath: /EXUI/src/layouts/components/navMenu.vue
--->
 <script setup lang="ts">
 defineProps<{ navMenus?: MenuModel[] | null }>()
 

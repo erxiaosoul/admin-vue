@@ -1,10 +1,4 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-08-09 00:41:17
- * @LastEditTime: 2022-08-17 21:08:47
- * @LastEditors: 贾二小
- * @FilePath: /exui/src/utils/helper.ts
- */
+
 import { CacheEnum } from '@/enum/cacheEnum'
 import router from '@/router/register'
 import useStore from '@/store/userStore'

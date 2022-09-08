@@ -1,10 +1,4 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-08-17 16:45:56
- * @LastEditTime: 2022-08-17 17:37:17
- * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/composables/useRole.ts
- */
+import { ElMessageBox } from 'element-plus'
 import * as api from '@/apis/role'
 import router from '@/router/register'
 

@@ -1,10 +1,3 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-08-05 17:09:32
- * @LastEditTime: 2022-08-05 22:38:15
- * @LastEditors: 贾二小
- * @FilePath: /exui/src/apis/auth.ts
- */
 import { http } from '@/plugins/axios'
 
 type ResponseData = {

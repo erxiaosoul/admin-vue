@@ -1,10 +1,3 @@
-<!--
- * @Author: 贾二小
- * @Date: 2022-07-07 20:42:50
- * @LastEditTime: 2022-08-16 23:51:07
- * @LastEditors: 贾二小
- * @FilePath: /exui/src/views/other/abort.vue
--->
 <script setup lang="ts">
 import env from '@/utils/env'
 import packageJson from '@/../package.json'

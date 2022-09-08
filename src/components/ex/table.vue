@@ -1,15 +1,8 @@
-<!--
- * @Author: 贾二小
- * @Date: 2022-08-15 14:48:47
- * @LastEditTime: 2022-08-25 18:39:19
- * @LastEditors: 贾二小
- * @FilePath: /admin-vue/src/components/ex/table.vue
--->
 <script setup lang="ts">
 import dayjs from 'dayjs'
 
 interface props {
-  data: Record<string, any>[]
+  data?: Record<string, any>[]
   columns: TableColumnsType[]
   emptyText?: string
   hidePagination?: boolean
@@ -23,7 +16,9 @@ const { data, columns, hidePagination, total, size, params = {} } = defineProps<
 const emit = defineEmits(['load'])
 
 onMounted(() => {
-  emit('load', params)
+  nextTick(() => {
+    emit('load', params)
+  })
 })
 
 //合并分页条件
@@ -45,7 +40,14 @@ const filterChange = (filters: any) => {
 </script>
 
 <template>
-  <el-table :data="data" border stripe :highlight-current-row="true" style="width: 100%" @filter-change="filterChange">
+  <el-table
+    v-if="data"
+    :data="data"
+    border
+    stripe
+    :highlight-current-row="true"
+    style="width: 100%"
+    @filter-change="filterChange">
     <slot></slot>
     <template v-for="(col, index) in columns" :key="index">
       <el-table-column

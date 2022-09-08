@@ -1,10 +1,3 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-08-16 20:07:23
- * @LastEditTime: 2022-08-20 21:42:12
- * @LastEditors: 贾二小
- * @FilePath: /admin-vue/vite/plugins/autoImport.ts
- */
 import { Plugin } from 'vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'

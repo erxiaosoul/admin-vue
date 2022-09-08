@@ -1,10 +1,3 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-04-21 22:08:13
- * @LastEditTime: 2022-08-20 13:41:25
- * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/store/userStore.ts
- */
 import { currentUserInfo } from '@/apis/user'
 import { isLogin } from '@/utils/helper'
 import { defineStore } from 'pinia'

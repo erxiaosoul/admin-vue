@@ -1,10 +1,3 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-08-15 14:48:47
- * @LastEditTime: 2022-08-23 17:39:14
- * @LastEditors: 贾二小
- * @FilePath: /admin-vue/vite.config.ts
- */
 import { defineConfig, loadEnv } from 'vite'
 import alias from './vite/alias'
 import { parseEnv } from './vite/util'
@@ -17,14 +10,10 @@ export default defineConfig(({ command, mode }) => {
 
   return {
     plugins: [...setupPlugins(isBuild, env), vueJsx({})],
-    //静态文件 url 前缀
-    // base: isBuild ? '/core/' : '/',
     resolve: {
       alias,
     },
     build: {
-      //编译文件生成目录
-      outDir: './dist',
       emptyOutDir: true,
       rollupOptions: {
         output: {
@@ -36,15 +25,15 @@ export default defineConfig(({ command, mode }) => {
         },
       },
     },
-    server: {
-      host: true,
-      proxy: {
-        '/api': {
-          target: env.VITE_API_URL,
-          changeOrigin: true,
-          rewrite: (path: string) => path.replace(/^\/api/, ''),
-        },
-      },
-    },
+    // server: {
+    //   host: true,
+    //   proxy: {
+    //     '/api': {
+    //       target: env.VITE_API_URL,
+    //       changeOrigin: true,
+    //       rewrite: (path: string) => path.replace(/^\/api/, ''),
+    //     },
+    //   },
+    // },
   }
 })

@@ -1,10 +1,4 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-08-13 16:10:53
- * @LastEditTime: 2022-08-24 21:44:11
- * @LastEditors: 贾二小
- * @FilePath: /admin-vue/src/composables/useUser.ts
- */
+import { ElMessageBox } from 'element-plus'
 import * as api from '@/apis/user'
 import router from '@/router/register'
 

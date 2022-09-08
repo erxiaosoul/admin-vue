@@ -1,26 +1,32 @@
-<!--
- * @Author: 贾二小
- * @Date: 2022-08-17 13:37:29
- * @LastEditTime: 2022-08-24 22:21:51
- * @LastEditors: 贾二小
- * @FilePath: /admin-vue/src/views/role/index.vue
--->
 <script setup lang="ts">
+import { AddOne, Delete, Search } from '@icon-park/vue-next'
+
 const { load, roles } = useRole()
 
 const roleTableColumns = [
   { prop: 'id', label: 'ID', align: 'center', width: 80 },
-  { prop: 'category', label: '分类', width: 300, search: true },
-  { prop: 'title', label: '标题', width: 300, search: true },
-  { prop: 'key', label: '键', search: true },
-  { prop: 'value', label: '值', width: 300, search: true },
+  { prop: 'name', label: '角色标识', width: 300, search: true },
+  { prop: 'title', label: '角色名称', width: 300, search: true },
   { prop: 'created_at', label: '创建时间', type: 'date', width: 120 },
   { prop: 'updated_at', label: '更新时间', type: 'date', width: 120 },
 ] as TableColumnsType[]
+
+const key = ref('')
 </script>
 
 <template>
   <el-card shadow="hover">
+    <div class="flex items-center h-10 mb-1">
+      <div class="flex-grow w-[70%] space-x-1">
+        <el-button type="primary" :icon="AddOne" />
+        <el-button type="danger" :icon="Delete" />
+      </div>
+      <div class="flex-none w-48">
+        <div class="flex items-center">
+          <el-input v-model="key" placeholder="Please Input" :suffix-icon="Search" />
+        </div>
+      </div>
+    </div>
     <ExTable
       :columns="roleTableColumns"
       :data="roles?.data"

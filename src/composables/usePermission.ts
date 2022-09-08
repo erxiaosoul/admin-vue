@@ -1,10 +1,4 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-08-17 16:47:40
- * @LastEditTime: 2022-08-17 17:13:35
- * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/composables/usePermission.ts
- */
+import { ElMessageBox } from 'element-plus'
 import * as api from '@/apis/permission'
 import router from '@/router/register'
 

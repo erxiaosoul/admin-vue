@@ -1,11 +1,3 @@
-<!--
- * @Author: 贾二小
- * @Date: 2022-07-04 20:45:43
- * @LastEditTime: 2022-08-20 21:46:52
- * @LastEditors: 贾二小
- * @Description: 
- * @FilePath: /admin-vue/src/layouts/components/tabBar.vue
--->
 <script setup lang="ts">
 import menuStore from '@/store/menuStore'
 import { RouteLocationNormalized } from 'vue-router'

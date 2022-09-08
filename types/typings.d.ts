@@ -1,10 +1,3 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-04-21 21:48:19
- * @LastEditTime: 2022-08-17 21:09:43
- * @LastEditors: 贾二小
- * @FilePath: /exui/types/typings.d.ts
- */
 interface FormFieldType {
   title: string
   name: string

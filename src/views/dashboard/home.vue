@@ -1,10 +1,3 @@
-<!--
- * @Author: 贾二小
- * @Date: 2022-07-02 00:06:51
- * @LastEditTime: 2022-08-18 14:54:40
- * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/views/dashboard/home.vue
--->
 <script setup lang="ts">
 const optionBar = {
   title: {

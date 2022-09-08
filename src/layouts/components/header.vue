@@ -1,13 +1,7 @@
-<!--
- * @Author: 贾二小
- * @Date: 2022-07-06 20:21:14
- * @LastEditTime: 2022-08-18 18:11:19
- * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/layouts/components/header.vue
--->
 <script setup lang="ts">
 import menuStore from '@/store/menuStore'
 import { useDark, useToggle } from '@vueuse/core'
+import { ElMessageBox } from 'element-plus'
 const router = useRouter()
 const route = useRoute()
 

@@ -1,10 +1,3 @@
-/*
- * @Author: 贾二小
- * @Date: 2022-07-01 22:30:04
- * @LastEditTime: 2022-08-09 17:59:14
- * @LastEditors: 贾二小
- * @FilePath: /exui/src/directive/index.ts
- */
 import { App } from 'vue'
 import _ from 'lodash'
 
